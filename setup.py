@@ -14,3 +14,8 @@ setup(
         ],
     }
 )
+
+entry_points='''
+    [ckan.plugins]
+    harbour=ckanext.harbour.plugin:HarbourPlugin
+''',
