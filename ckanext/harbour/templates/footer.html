@@ -1,0 +1,21 @@
+{% ckan_extends %}
+
+{% block footer_content %}
+<div class="footer-terms">
+  <a href="http://datos.gob.mx/libreusomx/" class="logo-libreusomx" target="_blank">Libre Uso MX</a>
+  <a href="http://opendefinition.org/" target="_blank">
+    <img alt="This material is Open Knowledge" src="http://assets.okfn.org/images/ok_buttons/ok_80x15_blue.png">
+  </a>
+  <a href="http://datos.gob.mx/terminos-y-condiciones/">{{ _('Terms and Conditions') }}</a>
+</div>
+
+<a href="http://presidencia.gob.mx/" class="sprite-sprite sprite-logo-presidencia" target="_blank">Presidencia de la República</a>
+<a href="http://mxabierto.tumblr.com/" class="sprite-sprite sprite-logo-mexico-abierto" target="_blank">México Abierto</a>
+
+<div class="attribution">
+  {% block footer_attribution %}
+  <p>{% trans %}<a class="hide-text ckan-footer-logo" href="http://ckan.org">CKAN</a>{% endtrans %}</p>
+  {% endblock %}
+</div>
+
+{% endblock %}
