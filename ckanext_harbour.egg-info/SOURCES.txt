@@ -10,6 +10,7 @@ ckanext/harbour/plugin.py
 ckanext/harbour/assets/script.js
 ckanext/harbour/assets/style.css
 ckanext/harbour/assets/webassets.yml
+ckanext/harbour/templates/footer.html
 ckanext/harbour/tests/__init__.py
 ckanext/harbour/tests/test_plugin.py
 ckanext_harbour.egg-info/PKG-INFO
