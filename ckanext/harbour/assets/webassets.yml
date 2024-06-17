@@ -7,8 +7,8 @@
 #     preload:
 #       - base/main
 
-# harbour-css:
+ harbour-css:
 #   filter: cssrewrite
-#   output: ckanext-harbour/%(version)s-harbour.css
-#   contents:
-#     - css/harbour.css
+   output: ckanext-harbour/harbour.css
+   contents:
+     - harbour.css

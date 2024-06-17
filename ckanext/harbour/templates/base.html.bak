@@ -1,0 +1,141 @@
+{% ckan_extends %}
+
+{% block styles %}
+  {{ super() }}
+
+  {% resource 'harbour/harbour.css' %}
+  {% asset 'ckanext-harbour/harbour' %}
+  {% asset 'harbour/harbour' %}
+
+
+
+<style>
+@charset "UTF-8";
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: 0 0;
+}
+.account-masthead {
+    background-color: rgb(0, 0, 0);
+}
+
+img[alt="minipic"] { 
+    max-width:  200px; 
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    display: block;
+}
+
+body {
+    color: #000;
+    background-color: #d9d9d1;
+    overflow-x: hidden;
+    line-height: 1.7;
+    -webkit-hyphens: none;
+    hyphens: none;
+    -ms-hyphens: none;
+    word-wrap: break-word;
+    -webkit-text-size-adjust: none;
+    font-family: "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    font-size: 16px;
+    #font-size: 1.6rem;
+}
+
+h1,h2,h3 {
+    font-weight: 300;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin-top: 0;
+    margin-bottom: .5em;
+    font-family: "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+h1 small,h2 small,h3 small,h4 small,h5 small,h6 small {
+    font-size: 80%;
+    color: #6f6f6f;
+    line-height: 0;
+}
+
+.as-h1,.hero__title--large,h1 {
+    font-size: 36px;
+    font-size: 3.6rem;
+}
+
+@media (max-width:767px) {
+    .as-h1,.hero__title--large,h1 {
+        font-size: 30px;
+        font-size: 3rem;
+    }
+}
+
+.as-h2,h2 {
+    font-size: 30px;
+    font-size: 3rem;
+}
+
+@media (max-width:767px) {
+    .as-h2,h2 {
+        font-size: 24px;
+        font-size: 2.4rem;
+    }
+}
+
+.as-h3,h3 {
+    font-size: 24px;
+    font-size: 2.4rem;
+}
+
+@media (max-width:767px) {
+    .as-h3,h3 {
+        font-size: 18px;
+        font-size: 1.8rem;
+    }
+}
+
+.as-h4,h4 {
+    font-size: 18px;
+    font-size: 1.8rem;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+@media (max-width:767px) {
+    .as-h4,h4 {
+        font-size: 16px;
+        font-size: 1.6rem;
+    }
+}
+
+.as-h5,h5 {
+    font-size: 14px;
+    font-size: 1.4rem;
+    font-style: normal;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.as-h6,h6 {
+    font-size: 12px;
+    font-size: 1.2rem;
+    color: #999;
+    margin: 1em 0 0;
+}
+
+.small,small {
+    font-weight: 400;
+    font-size: 12px;
+    font-size: 1.2rem;
+}
+
+.strong,strong {
+    font-weight: 600;
+}
+</style>
+
+
+{% endblock %}

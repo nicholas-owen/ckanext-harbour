@@ -17,5 +17,5 @@ setup(
 
 entry_points='''
     [ckan.plugins]
-    harbour=ckanext.harbour.plugin:HarbourPlugin
+    example_theme=ckanext.example_theme.plugin:ExampleThemePlugin
 ''',

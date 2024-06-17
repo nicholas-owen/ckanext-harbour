@@ -3,4 +3,3 @@ ckan = ckan.lib.extract:extract_ckan
 
 [ckan.plugins]
 harbour = ckanext.harbour.plugin:HarbourPlugin
-

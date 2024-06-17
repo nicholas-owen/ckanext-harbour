@@ -1,24 +1,961 @@
 {% ckan_extends %}
 
-{% block footer_content %}
-<div class="footer-terms">
-  <a href="http://datos.gob.mx/libreusomx/" class="logo-libreusomx" target="_blank">Libre Uso MX</a>
-  <a href="http://opendefinition.org/" target="_blank">
-    <img alt="This material is Open Knowledge" src="http://assets.okfn.org/images/ok_buttons/ok_80x15_blue.png">
-  </a>
-  <a href="http://datos.gob.mx/terminos-y-condiciones/">{{ _('Terms and Conditions') }}</a>
-  Why is this there
+{% block styles %}
+  {{ super() }}
+
+  {# Import example_theme.css using Webassets.  'example_theme/' is
+    the name that the example_theme/webassets directory was registered
+    with when the toolkit.add_resource() function was called.
+    'example_theme' is the name to the Webassets bundle file,
+    registered inside webassets.yml file. #}
+  {% asset 'harbour/harbour' %}
+
+
+
+
+
+  {% block footer_content %}
+
+  {% block footer_nav %}
+  
+  <div class="footer__top2">
+    <article class="block block--col-1">
+    <ul class="footer__list list-unstyled">
+     
+      <li><a href="{{ h.url_for(controller='home', action='about') }}">{{ _('About {0}').format(g.site_title) }}</a></li>
+      <li><a href="http://www.ucl.ac.uk/copyright">Copyright</a></li>
+      <li><a href="http://www.ucl.ac.uk/privacy">Privacy notice</a></li>
+      <li><a href="http://www.ucl.ac.uk/accessibility">Accessibility</a></li>
+      <li><a href="https://opendefinition.org/od/2.1/en/"><img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Od_80x15_blue.png" alt="Open Data"></a></li>
+      <li><img src="Logo-CKAN.png" width="60" height="60"></li>
+    
+     </ul></article>
+     <article class="block block--col-3-big">
+        <div class="a">
+        <ul class="footer__list list-unstyled">
+            {% block footer_links_ckan %}
+             {% set api_url = 'http://docs.ckan.org/en/{0}/api.html'.format(g.ckan_doc_version) %}
+       
+       <li><font color="#ffffff">      SIGN UP FOR OUR NEWSLETTER</font></li>
+       <li><font color="#ffffff">Sign up to receive news and updates from UCL Harbour Explorer. <br>Your information will be used in accordance with our privacy policy. You may opt out at any time.</font></li>
+       <li><a href="http://www.ucl.ac.uk/FAQ">FAQ</a></li>
+             <li><a href="http://www.ucl.ac.uk/terms">Disclaimer</a></li>
+             <li><a href="http://www.ucl.ac.uk/contact">Contact us</a></li>
+             <li><a href="{{ api_url }}">{{ _('CKAN API') }}</a></li>
+            {% endblock %}
+           </ul>
 </div>
+        </article>
 
-<a href="http://presidencia.gob.mx/" class="sprite-sprite sprite-logo-presidencia" target="_blank">Presidencia de la República</a>
-<a href="http://mxabierto.tumblr.com/" class="sprite-sprite sprite-logo-mexico-abierto" target="_blank">México Abierto</a>
 
-<div class="attribution">
-  {% block footer_attribution %}
-  <p>{% trans %}<a class="hide-text ckan-footer-logo" href="http://ckan.org">CKAN</a>{% endtrans %}</p>
-  {% endblock %}
-</div>
-
+  </div>
 
 
 {% endblock %}
+<br><br><br><br><br><br><br><br>
+<style>
+@charset "UTF-8";
+.tags {
+    background-color: rgb(0, 0, 0); 
+}
+
+/* Change the colors of the "Search Your Data" box. */
+.homepage .module-search .module-content {
+  color: rgb(207, 206, 206);
+  /* background-color: white; */
+}
+
+
+.homepage .module-feeds  {
+    background-image: url("bg_001b.png");
+    background-color: #3e3d3d;
+}
+
+.site-footer {
+    background-color: rgb(0, 0, 0);   
+}
+
+/* Change the background color of the "Popular Tags" box. */
+.homepage .module-search .tags {
+  background-color: rgb(0, 0, 0);
+}
+
+/* Remove the borders around the "Welcome to CKAN" and "Search Your Data"
+   boxes. 
+   .hero .box {
+  border: none;
+} */
+
+/* Remove the "box shadow" effect around various boxes on the page. 
+.box {
+  box-shadow: none;
+}
+*/
+
+/* Remove some padding. This makes the bottom edges of the "Welcome to CKAN"
+   and "Search Your Data" boxes line up. */
+   .module-content:last-child {
+  padding-bottom: 0px;
+}
+.homepage .module-search {
+  padding: 0px;
+}
+
+
+.site-footer,
+.site-footer label,
+.site-footer small {
+  color: rgba(255, 255, 255, 0.6);
+}
+/* The link texts in the footer. */
+.site-footer a {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+
+
+
+
+
+
+
+
+
+html {
+    font-size: 100% # 62.5%;
+    overflow-x: hidden;
+}
+
+.masthead {
+    background-color: rgb(0, 0, 0);  
+}
+
+.logo > img {
+  /* Add other styles for your logo image here, if needed */
+  width: auto;  /* Example: Set the desired width */
+  height: auto;  /* Example: Maintain aspect ratio */
+  background-image: url("https://imgs.search.brave.com/o5NsPrRS6YqJ3dkFtKxOKzg5AKm2hHKWWBopW7u_YKc/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9keW5h/bWljLmJyYW5kY3Jv/d2QuY29tL2Fzc2V0/L2xvZ28vMmVmYzBi/NWMtOTU2Mi00NjNl/LThkZGEtNGI5NzE4/ZDk5YzA3L2xvZ28t/c2VhcmNoLWdyaWQt/MXg_bG9nb1RlbXBs/YXRlVmVyc2lvbj0x/JnY9NjM4MzkxMDMx/NzA4ODAwMDAw.jpeg");  
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: 0 0;
+}
+.account-masthead {
+    background-color: rgb(0, 0, 0);
+}
+
+img[alt="minipic"] { 
+    max-width:  200px; 
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    display: block;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+.sidebar {
+    position: absolute;
+    margin-top: 3em;
+    left: 0;
+    width: 19.8653%;
+}
+.block {
+    margin-bottom: 1em;
+}
+
+.block--col-1 {
+    display: block;
+    float: left;
+    margin-left: 0;
+    margin-right: -100%;
+    width: 31.3064480692%;
+}
+.block--col-2 {
+    display: block;
+    float: left;
+    margin-left: 34.3367510992%;
+    margin-right: -100%;
+    width: 31.2882697656%;
+}
+
+.block--col-3 {
+    display: block;
+    float: left;
+    margin-left: 68.6553238948%;
+    margin-right: -100%;
+    width: 31.277335979%;
+}
+
+.block--col-3-big {
+    display: block;
+    float: left;
+    margin-left: 31.277335979%;
+    margin-right: -100%;
+    width: 68.6553238948%;
+}
+
+body {
+    color: #000;
+    background-color: #d9d9d1;
+    overflow-x: hidden;
+    line-height: 1.7;
+    -webkit-hyphens: none;
+    hyphens: none;
+    -ms-hyphens: none;
+    word-wrap: break-word;
+    -webkit-text-size-adjust: none;
+    font-family: "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    font-size: 16px;
+    #font-size: 1.6rem;
+}
+
+h1,h2,h3 {
+    font-weight: 300;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin-top: 0;
+    margin-bottom: .5em;
+    font-family: "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+h1 small,h2 small,h3 small,h4 small,h5 small,h6 small {
+    font-size: 80%;
+    color: #6f6f6f;
+    line-height: 0;
+}
+
+.as-h1,.hero__title--large,h1 {
+    font-size: 36px;
+    font-size: 3.6rem;
+}
+
+@media (max-width:767px) {
+    .as-h1,.hero__title--large,h1 {
+        font-size: 30px;
+        font-size: 3rem;
+    }
+}
+
+.as-h2,h2 {
+    font-size: 30px;
+    font-size: 3rem;
+}
+
+@media (max-width:767px) {
+    .as-h2,h2 {
+        font-size: 24px;
+        font-size: 2.4rem;
+    }
+}
+
+.as-h3,h3 {
+    font-size: 24px;
+    font-size: 2.4rem;
+}
+
+@media (max-width:767px) {
+    .as-h3,h3 {
+        font-size: 18px;
+        font-size: 1.8rem;
+    }
+}
+
+.as-h4,h4 {
+    font-size: 18px;
+    font-size: 1.8rem;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+@media (max-width:767px) {
+    .as-h4,h4 {
+        font-size: 16px;
+        font-size: 1.6rem;
+    }
+}
+
+.as-h5,h5 {
+    font-size: 14px;
+    font-size: 1.4rem;
+    font-style: normal;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.as-h6,h6 {
+    font-size: 12px;
+    font-size: 1.2rem;
+    color: #999;
+    margin: 1em 0 0;
+}
+
+.small,small {
+    font-weight: 400;
+    font-size: 12px;
+    font-size: 1.2rem;
+}
+
+.strong,strong {
+    font-weight: 600;
+}
+table {
+    display: table;
+    table-layout: auto;
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    border-collapse: collapse;
+    clear: left;
+    border-spacing: 0;
+    font-size: .8em;
+}
+
+tbody,tfoot,thead {
+    display: table-row-group;
+}
+
+thead {
+    display: table-header-group;
+}
+
+tbody {
+    display: table-row-group;
+}
+
+tfoot {
+    display: table-footer-group;
+}
+
+tr {
+    display: table-row;
+}
+
+td,th {
+    display: table-cell;
+    text-align: left;
+    width: auto;
+    border-bottom: 1px solid #e6e6e6;
+    border-top: none;
+    vertical-align: middle;
+    padding: .25em 1em .25em 0;
+}
+
+th {
+    border-right: 1px solid #e6e6e6;
+    border-bottom-color: #e6e6e6;
+    color: #333;
+    font-weight: 700;
+    background-color: #eee;
+}
+
+caption,td,th {
+    padding: 4px 10px 4px 5px;
+}
+
+tr.even td {
+    background: #e5ecf9;
+}
+
+tfoot {
+    font-style: italic;
+}
+
+caption {
+    caption-side: bottom;
+    color: #666;
+    font-size: .875em;
+    line-height: 1.4286;
+    padding: .8571em 0 .2857em;
+    text-align: left;
+}
+
+td,td img {
+    vertical-align: top;
+}
+
+.table-responsive {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.table-responsive td,.table-responsive th {
+    margin: 0;
+    vertical-align: top;
+    border: 1px solid #e6e6e6;
+}
+
+.table-responsive th {
+    text-align: left;
+}
+
+@media (max-width:989px) {
+    .table-responsive {
+        display: block;
+        position: relative;
+        width: 100%;
+        border-top: 0;
+    }
+
+    .table-responsive thead {
+        display: block;
+        float: left;
+    }
+
+    .table-responsive thead tr {
+        display: block;
+    }
+
+    .table-responsive tbody {
+        display: block;
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+    }
+
+    .table-responsive tbody tr {
+        vertical-align: top;
+        border-right: 1px solid #eee;
+        display: -moz-inline-stack;
+        display: inline-block;
+        zoom: 1;
+    }
+
+    .table-responsive th {
+        display: block;
+        border-bottom: 0;
+    }
+
+    .table-responsive td {
+        display: block;
+        min-height: 1.25em;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 0;
+    }
+}
+.divider {
+    border-color: #ddd;
+}
+
+.divider--top {
+    margin-top: 1.5em;
+    padding-top: 1.5em;
+    border-top-width: 1px;
+    border-top-style: solid;
+}
+
+.divider--bottom {
+    margin-bottom: 1.5em;
+    padding-bottom: 1.5em;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.footer__outer {
+    background-color: #40403e; 
+}
+
+.footer__top {
+    background-color: #000000;
+    padding: 40px 35px;
+    margin-left: -35px;
+    margin-right: -35px;
+    color: #fff;
+    clear: left;
+}
+
+.footer__inner {
+    background-color: #40403e;
+    padding: 40px 35px;
+    margin-left: -35px;
+    margin-right: -35px;
+    color: #fff;
+    clear: left;
+}
+
+.footer__inner h2 {
+    font-size: 1.6rem;
+    text-transform: none;
+}
+
+.footer__inner a {
+    color: #eee;
+}
+
+.footer__inner a:active,.footer__inner a:focus,.footer__inner a:hover {
+    color: #fff;
+}
+
+.footer__list {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.footer__list li {
+    margin-left: 0;
+    list-style-type: none;
+}
+
+.footer__list li:before {
+    background-color: transparent!important;
+}
+
+.footer__item {
+    padding-bottom: 4px;
+    padding-top: 4px;
+    display: block;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-size: 1rem; #1.4
+}
+
+.footer__links {
+    margin-top: .5em;
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+
+
+.social-buttons {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.social-buttons--hoz .social-buttons__item {
+    float: left;
+    margin-left: 1em;
+    width: auto;
+}
+
+.social-buttons--hoz .social-buttons__item:first-child {
+    margin-left: 0;
+}
+
+.social-buttons--vert .social-buttons__item {
+    margin-top: 1em;
+}
+
+.social-buttons--vert .social-buttons__item:first-child {
+    margin-top: 0;
+}
+
+.social-buttons__item {
+    list-style-type: none;
+}
+
+.social-buttons__link {
+    background-image: url("//cdn.ucl.ac.uk/indigo/images/social-buttons/social-icons.png");
+    background-repeat: no-repeat;
+    display: block;
+    font: 0/0 a;
+    height: 44px;
+    transition: box-shadow ease-in-out .15s;
+    width: 44px;
+}
+
+.social-buttons__link--twitter {
+    background-position: 0 0;
+}
+
+.social-buttons__link--facebook {
+    background-position: -44px 0;
+}
+
+.social-buttons__link--google {
+    background-position: -88px 0;
+}
+
+.social-buttons__link--flickr {
+    background-position: -132px 0;
+}
+
+.social-buttons__link--youtube {
+    background-position: -176px 0;
+}
+
+.social-buttons__link--linkin {
+    background-position: -220px 0;
+}
+
+.social-buttons__link--instagram {
+    background-position: -266px 0;
+}
+
+.social-buttons__link:hover {
+    box-shadow: 0 0 4px rgba(0,0,0,.4);
+    transition: box-shadow ease-in-out .15s;
+}
+
+.clear {
+    clear: both;
+}
+
+.clearfix,.dl-inline,.hero,.media {
+    zoom: 1;
+}
+
+.clearfix:after,.clearfix:before,.dl-inline:after,.dl-inline:before,.hero:after,.hero:before,.media:after,.media:before {
+    content: "";
+    display: table;
+}
+
+.clearfix:after,.dl-inline:after,.hero:after,.media:after {
+    clear: both;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.push-left {
+    margin-left: 1.5em;
+}
+
+.push-right {
+    margin-right: 1.5em;
+}
+
+.push-bottom {
+    margin-bottom: 1.5em;
+}
+
+.push-top {
+    margin-top: 1.5em;
+}
+
+.zero {
+    margin: 0;
+}
+
+.zero-top {
+    margin-top: 0;
+}
+
+.zero-bottom {
+    margin-bottom: 0;
+}
+
+.zero-left {
+    margin-left: 0;
+}
+
+.zero-right {
+    margin-right: 0;
+}
+
+.zero-pad {
+    padding: 0;
+}
+
+.zero-pad-top {
+    padding-top: 0;
+}
+
+.zero-pad-bottom {
+    padding-bottom: 0;
+}
+
+.zero-pad-left {
+    padding-left: 0;
+}
+
+.zero-pad-right {
+    padding-right: 0;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-nowrap {
+    white-space: nowrap;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-capitalize,time {
+    text-transform: capitalize;
+}
+
+.text-emphasise {
+    font-style: italic;
+}
+
+.no-respond {
+    width: auto;
+}
+
+.is-active {
+    display: block;
+}
+
+.is-open {
+    max-height: 40em;
+    overflow: visible;
+    opacity: 1;
+    transition: all .5s;
+}
+
+.is-collapsed {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all .5s;
+}
+
+.is-hidden {
+    display: none;
+}
+
+.is-disabled {
+    opacity: .8;
+    text-decoration: line-through;
+    cursor: not-allowed;
+}
+ol,ul {
+    margin-top: 0;
+    margin-left: 1.5em;
+}
+
+ol ul,ul ul {
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.list-inline,.list-unstyled,.pills {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.list-inline li,.list-unstyled li,.pills li {
+    margin-left: 0;
+    list-style-type: none;
+}
+
+.list-inline li:before,.list-unstyled li:before,.pills li:before {
+    background-color: transparent!important;
+}
+
+.list-inline,.pills {
+    display: inline;
+    margin-left: 0;
+}
+
+.list-inline>li,.pills>li {
+    margin-right: 10px;
+    display: -moz-inline-stack;
+    display: inline-block;
+    zoom: 1;
+}
+
+.list-inline--divided li:after {
+    content: "|";
+    margin-left: 10px;
+}
+
+.list-inline--divided li:last-child:after {
+    content: "";
+    display: none;
+}
+
+.list-divided li {
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    margin-bottom: 14px;
+    margin-bottom: 1.4rem;
+    padding-bottom: 14px;
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.list-divided li:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.box ul li,.tabbed>div ul li {
+    margin-left: 1em;
+}
+
+ol li {
+    list-style-type: decimal;
+    margin-bottom: 1em;
+}
+
+ol li ol {
+    margin-top: 1em;
+}
+
+ol li li {
+    margin-left: 1.5em;
+}
+
+dl {
+    margin-top: 1em;
+}
+
+dt {
+    font-weight: 700;
+}
+
+small {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: 0 0;
+}
+
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: 0 0;
+}
+
+
+.hero .module-content {
+  
+  color: #ffffff;  
+  background-color: #020202;  
+  padding: 10px 20px;  
+  margin: 0px;  
+}
+
+.module-search .tags {
+  /* Add your styles for the "module" element here */
+  color: #ffffff;  
+  background-color: #020202;  
+  padding: 10px 20px;  
+  margin: 0px;  
+}
+</style>
+
+
+  <div class="footer__outer">
+   <div class="footer__inner clearfix">
+     <article class="block block--col-1">
+     <h2 class="as-h5">Information for</h2>
+      <ul class="footer__list list-unstyled">
+       <li class="footer__item"><a href="//www.ucl.ac.uk/students">Current students</a></li>
+       <li class="footer__item"><a href="//www.ucl.ac.uk/staff">Staff</a></li>
+       <li class="footer__item"><a href="//www.ucl.ac.uk/alumni">Alumni</a></li>
+       <li class="footer__item"><a href="//www.ucl.ac.uk/enterprise/businesses">Business</a></li>
+       <li class="footer__item"><a href="//www.ucl.ac.uk/giving">Donors</a></li>
+     </ul>
+    </article>
+    <article class="block block--col-2">
+    <h2 class="as-h5">Visit</h2>
+     <ul class="footer__list list-unstyled">
+       <li class="footer__item"><a href="//www.ucl.ac.uk/maps">Maps</a></li>
+       <li class="footer__item"><a href="//www.ucl.ac.uk/lccos/library-culture-collections-and-open-science-lccos">Library, museums and collections</a></li>
+       <li class="footer__item"><a href="//www.ucl.ac.uk/bloomsbury-theatre">Bloomsbury Theatre</a></li>
+       <li class="footer__item"><a href="//www.ucl.ac.uk/ucl-east">UCL East</a></li>
+       <li class="footer__item"><a href="//www.ucl.ac.uk/maps">Tours and visits</a></li>
+     </ul>
+    </article>
+  <article class="block block--col-3">
+    <h2 class="as-h5">Connect with UCL</h2>
+    <ul class="footer__list list-unstyled">
+      <li class="footer__item"><a href="//www.ucl.ac.uk/work-at-ucl/search-ucl-jobs">Jobs</a></li>
+      <li class="footer__item"><a href="//www.ucl.ac.uk/news/services-media">Media Relations</a></li>
+      <li class="footer__item"><a href="//www.ucl.ac.uk/events">Events</a></li>
+      <li class="footer__item"><a href="//www.ucl.ac.uk/london">UCL and London</a></li>
+      <li class="footer__item"><a href="//shop.ucl.ac.uk">UCL Shop</a></li>
+    </ul>
+  </article>
+  <div class="clear"></div>
+  <ul id="social" class="list-inline footer__list list-unstyled zero-bottom">
+    <li><a href="//twitter.com/ucl"><img class="zero-bottom" alt="Twitter" src="//cdn.ucl.ac.uk/img/twitter-x.png" height="35" width="35"></a></li>
+    <li><a href="//www.facebook.com/uclofficial"><img class="zero-bottom" alt="Facebook" src="//cdn.ucl.ac.uk/img/35x35xfacebook.png.pagespeed.ic.-VUStBF1gm.png" height="35" width="35"></a></li>
+    <li><a href="//www.youtube.com/ucltv"><img class="zero-bottom" alt="YouTube" src="//cdn.ucl.ac.uk/img/35x35xyoutube-icon-square.png.pagespeed.ic.GcRcZjQawu.png" height="35" width="35"></a></li>
+    <li><a href="//soundcloud.com/uclsound"><img class="zero-bottom" alt="SoundCloud" src="//cdn.ucl.ac.uk/img/35x35xsoundcloud.png.pagespeed.ic.BdtBaqtDmd.jpg" height="35" width="35"></a></li>
+    <li><a href="//www.flickr.com/photos/uclnews"><img class="zero-bottom" alt="Flickr" src="//cdn.ucl.ac.uk/img/35x35xflickr.png.pagespeed.ic.KdAnMQjbrP.png" height="35" width="35"></a></li>
+    <li><a href="//www.instagram.com/ucl/"><img class="zero-bottom" alt="Instagram" src="//cdn.ucl.ac.uk/img/35x35xinstagram-badge.png.pagespeed.ic.OPAzj9OMyV.png" height="35" width="35"></a></li>
+    <li><a href="//www.tiktok.com/@uclofficial"><img class="zero-bottom" alt="TikTok" src="//cdn.ucl.ac.uk/img/tiktok.png" height="35" width="35"></a></li>
+  </ul>
+  <hr class="clear">
+  <ul class="footer__list list-unstyled zero-bottom">
+    <li class="footer__item small">University College London,&nbsp;Gower Street,&nbsp;London,&nbsp;WC1E 6BT&nbsp;Tel:&nbsp;+44&nbsp;(0)&nbsp;20 7679 2000</li>
+  </ul>
+  <ul class="list-inline footer__list list-unstyled list-inline--divided">
+    <li class="small">Copyright © 2024 UCL</li>
+    <li class="small"><a href="//www.ucl.ac.uk/legal-services/disclaimer">Disclaimer</a></li>
+    <li class="small"><a href="//www.ucl.ac.uk/foi">Freedom of Information</a></li>
+    <li class="small"><a href="//www.ucl.ac.uk/accessibility">Accessibility</a></li>
+    <li class="small"><a href="//www.ucl.ac.uk/legal-services/privacy">Privacy and Cookies</a></li>
+    <li class="small"><a href="//www.ucl.ac.uk/commercial-procurement/modern-day-slavery-statement">Slavery statement</a></li>
+    <li class="small"><a href="//www.ucl.ac.uk/about/contact-us">Contact Us</a></li>
+
+  </ul>
+      
+      
+      
+
+  
+  
+  {#
+  
+           <div class="span3">
+            {% if g.site_logo %}
+              <a class="logo pull-right clearfix" href="http://www.barnet.gov.uk/"><img src="{{ h.url_for_static(g.site_logo) }}" alt="{{ g.site_title }} Logo" title="{{ g.site_title }} Logo" /></a>
+            {% endif %}
+  #}       
+            
+  {% block footer_attribution %}
+    <a class="hide-text ckan-footer-logo" href="http://ckan.org">CKAN</a>
+  {% endblock %}
+            
+  </div>
+  
+  {% endblock %}
+  
+  </div>
+  
+  {% endblock %}
